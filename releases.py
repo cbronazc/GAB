@@ -3,6 +3,7 @@ import config
 import api
 import shelve
 import emailer
+import os
 
 def run():
   # import pdb; pdb.set_trace()
