@@ -16,3 +16,9 @@ Make a token on Github and paste it into token.txt in the project root
 Run every 5 minutes:
 
 `*/5 * * * * /usr/local/bin/python2.7 /path/to/gab/gab.py > /path/to/gab/logfile.log 2>&1`
+
+
+
+### Todo
+
+* Send release notes to different people
