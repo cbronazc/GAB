@@ -8,7 +8,7 @@ domain = 'mydomain.com'
 
 # Auto merges pull requests in github
 automerger = False
-am_repos = ['repo_name'] # Add all repo's you want to automerged here
+am_repos = ['repo_name'] # Add all repo's you want to automerged here, case sensitive
 am_ignore_branches = ['master', 'release'] # Add 'master' here if you don't want to automerge into master
 
 
