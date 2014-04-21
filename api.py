@@ -20,5 +20,4 @@ def get_prs(repo):
 
 def get_releases(repo):
   r = requests.get(base + '/repos/%s/%s/releases'%(config.username, repo,), auth=('token', config.oauth_key))
-  import pdb; pdb.set_trace()
   return r.json()
