@@ -5,7 +5,7 @@
 Edit config_example.py to be config.py, then edit the variables in the config to do the following things
 
 * Automerge pull requests for certain repositories
-* Send emails to people everytime a release is created, with the body made up of the release notes.
+* Send emails to people everytime a release is created in github, with the body made up of the release notes.
 
 ### Github Auth
 
