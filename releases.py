@@ -11,8 +11,8 @@ def run():
   for repo in config.release_repos:
     data = api.get_releases(repo)
     for i in data:
-      name=i["tag_name"]
-      notes=i["body"]
+      name=i["tag_name"].encode('ascii','ignore')
+      notes=i["body"].encode('ascii','ignore')
       if name not in d.keys():
         d[name] = notes
         if '-noemail-' not in notes:
