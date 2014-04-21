@@ -29,4 +29,4 @@ def email_updates(repo, tag_name, name, notes):
   body = "<h2>%s version %s has been released </h2>"%(repo, tag_name)
   body += "<br><b>%s</b>"%name
   body += "<br>" + notes
-  emailer.send_email(config.release_contacts['repo'], subject, body)
+  emailer.send_email(config.release_contacts[repo], subject, body)
