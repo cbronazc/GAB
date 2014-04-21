@@ -23,6 +23,6 @@ def run():
 
 def email_updates(repo, name, notes):
   subject = "%s version %s has been released"%(repo, name)
-  body = "<h1>%s version %s has been released </h1>"%(repo, name)
+  body = "<h2>%s version %s has been released </h2>"%(repo, name)
   body += "\r\n" + notes
   emailer.send_email(config.release_contacts, subject, body)
