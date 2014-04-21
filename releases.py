@@ -15,8 +15,9 @@ def run():
     for i in data:
       name=i["tag_name"].encode('ascii','ignore')
       notes=i["body"].encode('ascii','ignore')
-      if name not in d.keys():
-        d[repo + "-" + name] = notes
+      release_name = repo + "-" + name
+      if release_name not in d.keys():
+        d[release_name] = notes
         if '-noemail-' not in notes:
           print "emailing a new release in %s"%repo
           email_updates(repo, name, notes)
