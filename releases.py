@@ -16,6 +16,7 @@ def run():
       if name not in d.keys():
         d[name] = notes
         if '-noemail-' not in notes:
+          print "emailing a new release in %s"%repo
           email_updates(repo, name, notes)
       else:
         print "no new releases"
