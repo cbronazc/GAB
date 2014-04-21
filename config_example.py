@@ -20,7 +20,9 @@ release_contacts = ['email@me.com']
 
 
 # Github access token - add it to token.txt in the same dir as the file
-token = 'token.txt'
-token_file = open(token)
+__location__ = os.path.realpath(
+    os.path.join(os.getcwd(), os.path.dirname(__file__)))
+
+token_file = open(os.path.join(__location__, 'token.txt'));
 oauth_key = token_file.read().rstrip('\n')
 token_file.close()

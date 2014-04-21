@@ -20,7 +20,7 @@ def run():
           email_updates(repo, name, notes)
       else:
         print "no new releases"
-    d.close()
+  d.close()
 
 def email_updates(repo, name, notes):
   subject = "%s version %s has been released"%(repo, name)

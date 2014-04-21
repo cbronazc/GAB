@@ -35,4 +35,4 @@ def run():
           print_message(False)
         else:
           print_message(True)
-          # merge(repo, pr_id)
+          merge(repo, pr_id)
