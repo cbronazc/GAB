@@ -7,7 +7,8 @@ import emailer
 def run():
   # import pdb; pdb.set_trace()
   print "Running release email updates at: " + str(datetime.datetime.now())
-  d = shelve.open('releases_db')
+  __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+  d = shelve.open(os.path.join(__location__, 'releases_db')
   for repo in config.release_repos:
     data = api.get_releases(repo)
     for i in data:
