@@ -16,8 +16,7 @@ am_ignore_branches = ['master', 'release'] # Add 'master' here if you don't want
 # if you don't want to send a release out just add -noemail- to the notes
 releases = False
 release_repos = ['repo_name']
-release_contacts = ['email@me.com']
-
+release_contacts = {'repo_name': ['email@me.com', 'email_another@me.com']}
 
 # Github access token - add it to token.txt in the same dir as the file
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
