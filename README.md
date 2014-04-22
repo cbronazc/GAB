@@ -21,4 +21,4 @@ Run every 5 minutes:
 
 ### Todo
 
-* Send release notes to different people
+* Nothing ?
