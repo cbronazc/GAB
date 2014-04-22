@@ -28,7 +28,6 @@ def process_release(r, repo, d):
     d[release_name] = notes
     one_day_ago = datetime.now() - timedelta(hours=24)
     rel_date = datetime.strptime(r['created_at'], "%Y-%m-%dT%H:%M:%SZ")
-    import pdb; pdb.set_trace()
     if ('-noemail-' not in notes) and (rel_date > one_day_ago):
       print "emailing a new release in %s"%repo
       email_updates(repo, tag_name, name, notes)
