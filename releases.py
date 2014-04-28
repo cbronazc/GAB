@@ -13,10 +13,13 @@ def run():
   print "Running release email updates at: " + str(datetime.now())
   __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
   d = shelve.open(os.path.join(__location__, 'releases_db'))
-  for repo in config.release_repos:
+  for repo in config.release_contacts.keys():
     data = api.get_releases(repo)
-    for i in data:
-      process_release(i, repo, d)
+    if type(data) is not list and data['message'] == "Not Found":
+      print "Repo not found: %s"%repo
+    else:
+      for i in data:
+        process_release(i, repo, d)
   d.close()
 
 def process_release(r, repo, d):
@@ -32,7 +35,7 @@ def process_release(r, repo, d):
       print "emailing a new release in %s"%repo
       email_updates(repo, tag_name, name, notes)
     else:
-      print "not emailing new release"
+      print "not emailing new release in %s"%repo
 
 def email_updates(repo, tag_name, name, notes):
   subject = "%s version %s has been released"%(repo, tag_name)
