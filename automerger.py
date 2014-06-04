@@ -24,7 +24,7 @@ def run():
     data = api.get_prs(repo)
 
 
-    if data and 'message' in data.keys() and data['message'] == "Not Found":
+    if data and 'message' in data[0].keys() and data[0]['message'] == "Not Found":
       print "Repo %s not found, make sure it exists"%repo
     else:
       for i in data:
